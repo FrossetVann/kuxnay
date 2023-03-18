@@ -1,0 +1,81 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+    {% if page_obj.number == 1 %}
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-text ">Рецепты со<br> всего мира !</h1>
+        </div>
+    </section>
+    <section class="dignity">
+        <div class="container">
+            <div class="dignity-header-text ">
+                <h2 class="dignity-text text-center">Наши достоинства</h2>
+            </div>
+            <div class="dignity-list">
+                <div class="dignity-list-element">
+                    <img src="{% static 'main/img/icons/meat.svg' %}" alt="Достоинства" class="dignity-list-element-img">
+                    <p class="dignity-list-element-text">Подберём блюдо</p>
+                </div>
+                <div class="dignity-list-element">
+                    <img src="{% static 'main/img/icons/meat.svg' %}" alt="Достоинства" class="dignity-list-element-img">
+                    <p class="dignity-list-element-text">Поможем приготовить </p>
+                </div>
+                <div class="dignity-list-element">
+                    <img src="{% static 'main/img/icons/meat.svg' %}" alt="Достоинства" class="dignity-list-element-img">
+                    <p class="dignity-list-element-text">Узнаете новые рецепты</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'main/mostviews.html' %}
+    {% endif %}
+    <section class="last">
+        <div class="container">
+            <div class="last-header-text">
+                <h2 class="last-text text-center">Последние блюда</h2>
+            </div>
+            <div class="last-sort">
+<!--                <form>-->
+                    <p class="sort-main-text">Сортировка:</p>
+                    <p class="sort-text">Теги<img src="{% static 'main/img/icons/bottom_arrow.svg' %}" alt="стрелка вниз" class="bottom-arrow-icon"></p>
+                    <input name="search" type="search" class="search input" placeholder="Поиск блюда">
+<!--                </form>-->
+            </div>
+            <div class="last-card-list card-list">
+
+                {% for el in recipesmini %}
+
+                <div class="last-card card">
+                    <form action="{% url 'recipe' el.id %}" method="get">
+                        <input type="hidden" name="post-id" value="{{el.id}}">
+                        <button type="submit" class="recipe-submit"></button>
+                    {% if el.photo %}
+                        <img src="{{el.photo.url}}" alt="{{el.photo.url}}" class="card-img">
+                    {% endif %}
+                    </form>
+                    <p class="card-text">{{ el.title }}</p>
+                    <p class="card-tags-header-text">Теги</p>
+                    <div class="card-tags">
+                        {% for tag in el.tag.all %}
+                        <p class="card-tag"> {{  tag.name }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="card-info-list">
+                        <div class="card-views">
+                            <p class="card-views-text"><img src="{% static 'main/img/icons/views.svg' %}" alt="просмотры иконка" class="card-info-icon">
+                                {{ el.total_views }}
+                            </p>
+                        </div>
+
+                        {% csrf_token %}
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+            {% include 'main/pageschange.html' %}
+        </div>
+    </section>
+{% endblock %}

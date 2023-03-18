@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyxnay|Сайт Рецептов</title>
+    <link rel="icon" type="image/x-icon" href="static/main/img/images/favicon.ico">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/adaptive.css' %}">
+</head>
+<body id="myBodyID">
+    <header class="header">
+        <section class="header-section">
+            <div class="container header-container">
+                <div class="logo" id="logo">
+                    <a href="{% url 'home' %}" class="logo-link"><img src="{% static 'main/img/icons/logo_img.svg' %}" alt="Логотип Курица" class="logo-img"></a>
+                </div>
+                <div class="header-nav" id="header-nav">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Блюда</a></li>
+                        <li class="nav-item"><a href="{% url 'categories' %}" class="nav-link">Категории</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="header-search">
+                    <input type="text" class="search input" placeholder="Поиск блюда">
+                </div>
+                {% if request.user.is_authenticated %}
+                <div class="header-account">
+                    <a href="{% url 'accounts' %}"><img src="{% static 'main/img/icons/acc.svg' %}" class="header-accaunt-img" alt="Аккаунт"></a>
+                    <a href="{% url 'logout' %}">Выйти</a>
+                </div>
+                {% else %}
+                <div class="header-account">
+                    <a href="{% url 'login' %}">Войти</a>
+                </div>
+                {% endif %}
+                <div class="menu" id="menu"></div>
+            </div>
+        </section>
+    </header>
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <section class="footer-section">
+            <div class="container footer-container">
+                <div class="footer-logo"><a href="{% url 'home' %}" class="logo-link"><img src="{% static 'main/img/icons/logo_img.svg' %}" alt="Логотип Курица в Футере" class="logo-img"></a></div>
+
+            <div class="footer-nav">
+                <nav class="nav">
+                    <ul class="nav-list nav-list-footer">
+                      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+                      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Блюда</a></li>
+                      <li class="nav-item"><a href="{% url 'categories' %}" class="nav-link">Категории</a></li>
+                    </ul>
+                  </nav>
+                </div>
+            </div>
+            <div class="copyright"><p class="copyright-text">2023 Kyxnay | все права защищены</p></div>
+        </section>
+    </footer>
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="{% static 'main/js/menu.js' %}"></script>
+    <script src="{% static 'main/js/accounts.js' %}"></script>
+
+</body>
+</html>

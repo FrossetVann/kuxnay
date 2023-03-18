@@ -1,0 +1,28 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+    <section class="authorization">
+      <div class="container authorization-container">
+            <h2 class="registration-title">Регистрация</h2>
+            <form class="registration-form form" method="post">
+                {% csrf_token %}
+
+                <div class="registration-inputs-block main-input-block">
+                    {% for f in form %}
+                    <div class="registration-input-block input-block">
+                        <p class="registration-login-text">{{ f.label }}</p>
+                        {{ f }}
+                    </div>
+                    <div> {{ f.errors }}</div>
+                    {% endfor %}
+                    </div>
+                <div class="login-button-reg">
+                    <input type="submit" class="registration-button form-button" id="nextBtn" value="Далее">
+                    <p class="have-account">Если у вас уже есть аккаунт <br>
+                        вы можете <a href="{% url 'login' %}" class="mark">войти</a></p>
+                </div>
+                </form>
+            </div>
+    </section>
+    {% endblock %}

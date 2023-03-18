@@ -1,0 +1,24 @@
+ {% load static %}
+  {% if page_obj.has_other_pages %}
+<ul class="pages">
+
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><div class="pre-page"><img src="{% static 'main/img/icons/page-change.svg' %}" alt=""></div></a>
+                {% endif %}
+                    {% for p in paginator.page_range %}
+                    {% if page_obj.number == p %}
+                    <li class="page">
+                      <p>{{ p }}</p>
+                  </li>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                  <li class="page">
+                      <a href="?page={{ p }}">{{ p }}</a>
+                  </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><div class="next-page"><img src="{% static 'main/img/icons/page-change.svg' %}" alt=""></div></a>
+                    {% endif %}
+
+              </ul>
+{% endif %}

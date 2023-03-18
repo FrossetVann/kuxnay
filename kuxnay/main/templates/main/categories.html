@@ -1,0 +1,21 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+
+    <section class="categories">
+        <div class="container">
+            <div class="categories-header-text ">
+                <h2 class="categories-text text-center">Категории</h2>
+            </div>
+            <div class="categories-card-list">
+                {% for tag in Tags %}
+                <div class="categories-card">
+                  <p>{{ tag.name }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% include 'main/pageschange.html'%}
+{% endblock %}

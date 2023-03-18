@@ -1,0 +1,50 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+    <section class="recipe">
+        <div class="container recipe-container">
+          <div class="recept-photo-and-info">
+            <a href="{% url 'home' %}" class="back-text back-text-recept" ><img src="{% static 'main/img/icons/back_arrow.svg' %}" alt="стрелка назад" class="back-arrow-icon">назад</a>
+            <div class="popular-card card recept-card">
+
+                        <img src="{{recipe.photo.url}}" alt="{{recipe.photo.url}}" class="card-img recept-card-img">
+
+              <p class="card-text recept-card-text">{{ recipe.title }}</p>
+              <p class="card-tags-header-text recept-card-tags-header-text">Теги</p>
+              <div class="card-tags recept-card-tags">
+                  {% for tag in recipe.tag.all %}
+                  <p class="card-tag">{{ tag.name }}</p>
+                  {% endfor %}
+              </div>
+              <div class="card-info-list recept-card-info">
+                  <div class="card-views">
+                      <p class="card-views-text"><img src="{% static 'main/img/icons/views.svg' %}" alt="просмотры иконка" class="card-info-icon">{{ recipe.total_views }}</p>
+                  </div>
+
+              </div>
+          </div>
+          </div>
+          <div class="recetp-structure-ingredients-recept">
+            <div class="structure-ingredients">
+              <div class="recept-structure">
+                <p class="structure-heading">Состав:</p>
+                <ul class="structure-list">
+                    {% for structure in recipe.structure.all %}
+                  <li class="structure-items"><img src="{% static 'main/img/icons/egg2.svg' %}" alt="" class="structure-items-img">
+                      {{ structure.name }}
+                  </li>
+                    {% endfor %}
+                </ul>
+              </div>
+          </div>
+          <div class="recept-main">
+            <h2 class="recept-main-heading">Рецепт:</h2>
+            <div class="recept-place">
+              <p class="recept-main-text">{{ recipe.recipe }}</p>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+   {% endblock %}

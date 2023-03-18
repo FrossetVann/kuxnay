@@ -1,0 +1,33 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+    <section class="authorization">
+        <div class="container login-container">
+          <div class="left-side-img"><img class="side-img" src="{% static 'main/img/images/pizza_reg.png' %}" alt=""></div>
+          <div class="login-block">
+            <div class="login">
+              <h2 class="login-title">Вход</h2>
+              <form class="login-form form" method="post">
+                  {% csrf_token %}
+                  <div class="login-inputs-block main-input-block">
+                      <div>{{ form.non_field_errors }}</div>
+                      {% for f in form %}
+                    <div class="registration-input-block input-block">
+                        <p class="registration-login-text">{{ f.label }}</p>
+                        {{ f }}
+                    </div>
+                    <div> {{ f.errors }}</div>
+                    {% endfor %}
+                  </div>
+                  <div class="login-button-reg">
+                      <input type="submit" class="login-button form-button" value="Войти">
+                      <p class="no-account">Если у вас нет аккаунт<br> 
+                          вы можете <a href="{% url 'authorization' %}" class="mark">зарагистрироваться</a></p>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+{% endblock %}

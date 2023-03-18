@@ -1,0 +1,39 @@
+{% extends 'main/layout.html'%}
+
+    {% block content %}
+        {% load static %}
+    {% if request.user.is_authenticated %}
+    <section class="account">
+        <div class="container">
+          <div class="account-header-text ">
+            <h2 class="account-text text-center">Ваш аккаунт</h2>
+          </div>
+            <div class="account-info-buttons">
+              <div class="account-info">
+                <p class="account-firstname" id="accountFirstName">{{ user.first_name }}</p>
+                <p class="account-lastname " id="accountLastName">{{ user.last_name }}</p>
+                <input placeholder="Имя" class="account-firstname hidden" id="accountInputFirstName">
+                <input placeholder="Фамилия" class="account-lastname hidden" id="accountInputLastName">
+              </div>
+              <div class="account-buttons">
+                <button class="account-edit button" id="editBtn">Изменить</button>
+                <button class="account-exit button" id="exitBtn">Выйти</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="favorites">
+        <div class="container">
+            <div class="favorites-header-text ">
+            </div>
+            {%else%}
+            <div class="notlogin">
+                    <a href="{% url 'authorization' %}"><span class="mark">Зарегистрироваться</span></a>
+                    <p>или</p>
+                    <a href="{% url 'login' %}"><span class="mark">Войти</span></a>
+                </div>
+          {% endif %}
+        </div>
+    </section>
+{% endblock %}

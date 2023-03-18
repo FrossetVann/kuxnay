@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('adaptive.css');
+*, :before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+:root{
+    --header-footer-color:#D2A83B;
+    --main-color:#E6BC4F;
+    --input-text-color:#BCBCBC;
+    --main-text-color:#1D1D1D;
+    --just-white-color:#ffffff;
+}
+body{
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+}
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--input-text-color);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--main-text-color);
+  border-radius: 4px;
+
+}
+a{
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+a:active{
+  text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+}
+html{
+    font-family: 'Gabriela', sans-serif;
+    scroll-behavior:smooth;
+}
+h2
+{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 48px;
+}
+.text-center{
+    text-align: center;
+}
+.container{
+    width: 1490px;
+    margin: 0 auto ;
+}
+/* header */
+.logo{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.logo-img{
+    height: 40px;
+    width: 40px;
+}
+.header{
+    background-color: var(--header-footer-color);
+    padding: 15px 0px;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-nav{
+    width: 60%;
+}
+.nav{
+    margin: 15px;
+}
+/* .nav-item
+{
+  transition: 2s;
+}
+.nav-item:hover
+{
+  outline: 2px solid var(--main-text-color);
+} */
+.nav-link{
+    color: var(--main-text-color);
+    font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+display: flex;
+align-items: center;
+}
+.header-search{
+    margin: auto 0;
+}
+.search{
+    background-image: url(../img/icons/search_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 155px;
+    background-size: 30px;
+    width: 200px;
+    height: 40px;
+    background-color: var(--just-white-color);
+    border-radius: 20px;
+    border: none;
+    padding-left: 10px;
+    outline: none;
+}
+.search::placeholder{
+    color: var(--input-text-color);
+    font-family: 'Gabriela';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+.header-account
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* hero */
+.hero{
+    background-image: url(../img/images/hero_back.png);
+}
+.hero-text{
+    font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 123px;
+display: flex;
+align-items: center;
+color: var(--main-color);
+padding: 200px 0px 395px 0px;
+margin: 0;
+}
+/* dignity */
+.dignity
+{
+    background-color: var( --main-color);
+}
+
+.dignity-list
+{
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.dignity-list-element
+{
+    width: 340px;
+    height: 340px;
+}
+.dignity-list-element-img
+{
+    width: 320px;
+    height: 308px;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+}
+.dignity-list-element-text
+{
+    position: relative;
+    min-width:240px ;
+    margin-top: -100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    text-align: center;
+}
+/* popular */
+.popular
+{
+    background-color: var(--main-color);
+}
+.card-list
+{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 31px;
+    padding-bottom: 60px;
+}
+.card
+{
+    width: 476px;
+    height: 650px;
+    background-color: var(--just-white-color);
+}
+.card-img
+{
+    height: 310px;
+    width: 100%;
+    object-fit: cover;
+}
+.card-text
+{
+    white-space: nowrap;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.card-tags-header-text
+{
+    font-size: 16px;
+    color: var(--input-text-color);
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-family: 'Inter' , sans-serif;
+}
+.card-tags
+{
+    width: 416px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap:wrap ;
+    margin-left: 30px;
+    gap: 20px;
+    margin-bottom: 55px;
+}
+.card-tag
+{
+    height: 40px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    font-family: 'Inter' , sans-serif;
+    text-transform: uppercase;
+}
+.card-info-list
+{
+    width: 416px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter' , sans-serif;
+    font-size: 20px;
+}
+.card-views-text
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-info-icon
+{
+    height: 30px;
+    width: 33px;
+}
+/* last */
+.last
+{
+    background-color: var(--main-color);
+}
+.last-sort
+{
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    background-color: var(--header-footer-color);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 150px;
+    padding-left:30px;
+    margin-bottom: 30px;
+}
+.sort-main-text
+{
+    font-size: 24px;
+}
+.sort-text
+{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.pages
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Inter' , sans-serif;
+    padding-bottom: 60px;
+    background-color:var(--main-color);
+}
+.pre-page
+{
+    height: 50px;
+    width: 50px;
+    background-color: var(--just-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.next-page
+{
+    height: 50px;
+    width: 50px;
+    background-color: var(--just-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(-1, 1);
+    cursor: pointer;
+}
+/* footer */
+.footer{
+    background-color: var(--header-footer-color);
+    z-index: 3;
+}
+.footer-container{
+    display: flex;
+}
+footer
+{
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-list-footer{
+    justify-content: space-evenly;
+}
+.footer-logo{
+    margin-top: 85px;
+    margin-right: 17%;
+}
+.footer-nav{
+    width: 60%;
+    margin: 80px 0px 40px 0px;
+}
+.copyright{
+    justify-content: center;
+    display: flex;
+}
+.copyright-text{
+    margin-bottom: 20px;
+    color: var(--just-white-color);
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+
+/* -----accounts.html------- */
+
+/* account */
+.account
+{
+  background-color: var(--just-white-color);
+}
+.account-block
+{
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+.account-image-block
+{
+  border: 10px solid var(--header-footer-color);
+  width: 390px;
+  height: 390px;
+}
+#account-image
+{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  object-fit:cover;
+}
+.account-info-buttons
+{
+  display: flex;
+  flex-direction: column;
+  height: 390px;
+  justify-content: space-between;
+}
+.account-firstname,.account-lastname
+{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.account-bithday
+{
+  margin-top: 20px;
+  font-size: 24px;
+}
+.account-buttons
+{
+  display: flex;
+  gap: 270px;
+}
+.button
+{
+  background-color: var(--main-color);
+  padding: 20px;
+  border:none;
+  font-size: 24px;
+}
+
+/* favorites */
+.favorites
+{
+  background-color: var(--main-color);
+}
+/* ---------categories------ */
+/* categories */
+.categories
+{
+  background-color: var(--main-color);
+}
+.categories-card-list
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding-bottom: 60px;
+}
+.categories-card
+{
+  height: 420px;
+  width: 420px;
+  background: url("../img/images/desert_categoria.png");
+  font-size: 48px;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.categories-card:hover
+{
+  font-size: 64px;
+  opacity: 60%;
+}
+/* --------recipe--------- */
+/* recipe */
+.recipe-container
+{
+  display: flex;
+}
+
+.back-text-recept
+{
+  /* margin-bottom: 50px; */
+  margin: 30px 0px;
+  color: var(--main-color);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 8px;
+  cursor: pointer;
+}
+.recetp-structure-ingredients-recept{
+  display:block;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+.recept-card-text
+{
+    white-space:normal;
+    text-overflow: clip;
+}
+
+.structure-ingredients{
+  display: flex;
+  margin-top: 90px;
+  gap: 100px;
+  justify-content: space-between;
+}
+.recept-ingredients-lists{
+  display: flex;
+}
+.structure-heading{
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 38px;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+.ingredients-heading{
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 38px;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+.ingredients-items{
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 33px;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+
+
+.structure-items-img{
+  margin-right: 20px;
+}
+.structure-items{
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 33px;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+.ingredients-quantity{
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 33px;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+margin-left: 40px;
+color: var(--main-color);
+}
+.recept-main-heading{
+  padding-top: 0px;
+  padding-bottom: 20px;
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 64px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+}
+.recept-main-text{
+  max-width: 600px;
+  line-height: 25px;
+  margin-bottom: 30px;
+
+}
+/* -------authorization------- */
+/* authorization */
+.authorization
+{
+  width: 100vw;
+}
+.left-side-img
+{
+  width: 50vw;
+  height: 75vh;
+  background-size: cover;
+}
+.left-right-side-img
+{
+  height: inherit;
+}
+.side-img
+{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit:cover;
+
+}
+.img-block
+{
+  position: absolute;
+
+  width: 100vw;
+  display: flex;
+  justify-content: end;
+}
+.authorization-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.login-title
+{
+  text-align: center;
+}
+.registration-date-block
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+.date-input
+{
+  border: 2px solid var(--main-color);
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+}
+.date-input::-web{
+  background-color: var(--main-color);
+  height: 40px;
+  width: 40px;
+}
+.registration-step2,.registration-step1
+{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-block
+{
+  width: 50vw;
+}
+.form
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.main-input-block
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 24px;
+}
+.input-block
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.login-button-reg
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  padding-bottom: 60px;
+
+}
+.login-container
+{
+   display: flex;
+ justify-content: center;
+  align-items: start;
+  width: 100vw;
+  align-items: center;
+}
+
+
+.form-button
+{
+  padding: 15px 20px;
+  background-color: var(--main-color);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+.form-input
+{
+  width: 220px;
+  height: 60px;
+  border: 2px solid var(--main-color);
+}
+.registration-step
+{
+  position: relative;
+  top: 70px;
+  right: -150px;
+}
+.mark
+{
+  color: var(--main-color);
+  cursor: pointer;
+}
+.back-text-reg
+{
+  margin-bottom: 0px;
+  position: relative;
+  top: 145px;
+  right: 220px;
+  transform: translateY(-100%);
+  font-family: 'Gabriela';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 20px;
+/* identical to box height, or 83% */
+
+display: flex;
+align-items: center;
+color: var(--main-color);
+}
+#img-bg
+{
+  position: absolute;
+  height: 75vh;
+  width: 50vw;
+  z-index: 1;
+  background-image: url(../img/images/pizza_reg.png);
+  left: calc(100vw - 50vw);
+  transition: 1s;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+/* -------- */
+.hidden
+{
+  display: none;
+}
+.input-column
+{
+  display: block;
+}
+.account-firstname::placeholder,.account-lastname::placeholder
+{
+  font-size: 20px;
+}
+.notlogin
+{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+}
+.recipe-submit
+{
+    position:absolute;
+    background-color: transparent;
+    height:310px;
+    width:476px;
+    border: none;
+    cursor:pointer;
+}
